@@ -1,0 +1,18 @@
+package com.netcracker.devcourses.sd4.service.converters;
+
+import com.netcracker.devcourses.sd4.persistence.domain.Country;
+import com.netcracker.devcourses.sd4.service.dto.CountryDTO;
+import org.springframework.core.convert.converter.Converter;
+
+/**
+ * Created by Konstantin on 01.11.16.
+ */
+public class CountryToCountryDTOConverter implements Converter<Country, CountryDTO> {
+    @Override
+    public CountryDTO convert(Country country) {
+        CountryDTO dto = new CountryDTO();
+        dto.setName(country.getName());
+
+        return dto;
+    }
+}
